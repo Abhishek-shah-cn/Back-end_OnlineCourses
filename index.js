@@ -18,3 +18,5 @@ const courseRouter = require('./routes/course')
 app.use('/course',courseRouter)
 
 
+const topicRouter = require('./routes/topics')
+app.use('/topic',topicRouter)
