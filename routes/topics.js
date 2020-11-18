@@ -22,9 +22,10 @@ router.get("/:id", async (req, res) => {
 
 router.post("/", async (req, res) => {
   const topics = new Topic({
-    name: req.body.name,
-    tech: req.body.tech,
-    sub: req.body.sub,
+    topic_id: req.body.topic_id,
+    topic_title: req.body.topic_title,
+    topic_description: req.body.topic_description,
+    like:req.body.like,
   });
 
   try {
@@ -38,7 +39,7 @@ router.post("/", async (req, res) => {
 router.patch("/:id", async (req, res) => {
   try {
     const topics = await Topic.findById(req.params.id);
-    topics.sub = req.body.sub;
+    topics.like = req.body.like;
     const a1 = await topics.save();
     res.json(a1);
   } catch (err) {

@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const db = require("./config/mongoose");
 
-const Port = 4000;
+const Port = 5000;
 
 app.listen(Port, function (err) {
   if (err) {
@@ -12,11 +12,10 @@ app.listen(Port, function (err) {
 });
 
 const session = require("express-session");
-app.use(express.json())
+app.use(express.json());
 
-const courseRouter = require('./routes/course')
-app.use('/course',courseRouter)
+const courseRouter = require("./routes/course");
+app.use("/course", courseRouter);
 
-
-const topicRouter = require('./routes/topics')
-app.use('/topic',topicRouter)
+const topicRouter = require("./routes/topics");
+app.use("/topic", topicRouter);

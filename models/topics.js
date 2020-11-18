@@ -15,6 +15,11 @@ const topicSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    like:{
+        type: Boolean,
+        required: true,
+        default: false
+    }
   },
   {
     timestamps: true,

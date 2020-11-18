@@ -23,9 +23,10 @@ router.get('/:id', async(req,res) => {
 
 router.post('/', async(req,res) => {
     const courses = new Course({
-        name: req.body.name,
-        tech: req.body.tech,
-        sub: req.body.sub
+        course_id: req.body.course_id,
+        title: req.body.title,
+        description: req.body.description,
+        duration:req.body.duration,
     })
 
     try{
